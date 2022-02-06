@@ -1,22 +1,29 @@
 import styled from "@emotion/styled";
 
-const Container = styled.div`
+export const Container = styled.div`
   padding: 10px;
+  border: 1px solid;
+  margin-bottom: 1rem;
 `;
 
-const Title = styled.h3`
+export const Title = styled.h3`
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 0.3em;
 `;
 
-const MiniTitle = styled.h6`
+export const MiniTitle = styled.h6`
   font-weight: bold;
   font-size: 1.05rem;
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   margin-bottom: 0.3em;
+`;
+
+export const MB10 = styled.div`
+  height: 10px;
+  visibility: hidden;
 `;
 
 const FlexContainer = styled.div`
@@ -38,10 +45,6 @@ const FlexBasisItem = styled(FlexItem)`
 
 const FlexWidthItem = styled(FlexItem)`
   width: 100px;
-`;
-
-const MB10 = styled.div`
-  margin-bottom: 10px;
 `;
 
 const FlexBasis = () => {
