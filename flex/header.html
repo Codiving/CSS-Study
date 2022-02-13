@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../reset.css" />
+    <title>Flex</title>
+    <style>
+      .header-container {
+        background-color: antiquewhite;
+
+        display: flex;
+        justify-content: space-between;
+      }
+      .header-search {
+        background-color: azure;
+        padding: 0.7em;
+      }
+      .header-menu-container {
+        background-color: blueviolet;
+
+        display: flex;
+      }
+      .header-menu {
+        background-color: aquamarine;
+        padding: 0.7em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-container">
+      <div class="header-search">검색</div>
+      <div class="header-menu-container">
+        <div class="header-menu">카메라</div>
+        <div class="header-menu">문서</div>
+        <div class="header-menu">사진</div>
+        <div class="header-menu">정보</div>
+      </div>
+    </div>
+  </body>
+</html>
