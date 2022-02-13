@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../reset.css" />
+    <title>Menu 컴포넌트</title>
+
+    <style>
+      .menu-container {
+        background-color: bisque;
+
+        display: flex;
+      }
+
+      .menu-item {
+        background-color: rgb(197, 126, 39);
+        color: white;
+        padding: 0.5em;
+        text-align: center;
+
+        width: calc(100% / 7);
+        transition: 0.3s;
+      }
+
+      .menu-item:hover {
+        width: calc((100% / 7) * 2);
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu-container">
+      <div class="menu-item">메일</div>
+      <div class="menu-item">블로그</div>
+      <div class="menu-item">카페</div>
+      <div class="menu-item">태그</div>
+      <div class="menu-item">쇼핑</div>
+      <div class="menu-item">뉴스</div>
+      <div class="menu-item">지도</div>
+    </div>
+  </body>
+</html>
