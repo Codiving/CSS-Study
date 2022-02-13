@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../reset.css" />
+    <title>Flex</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* 헤더 */
+      .header-container {
+        width: 100%;
+
+        background-color: antiquewhite;
+
+        display: flex;
+        justify-content: space-between;
+      }
+      .header-search {
+        background-color: azure;
+        padding: 0.7em;
+      }
+      .header-menu-container {
+        background-color: blueviolet;
+
+        display: flex;
+      }
+      .header-menu {
+        background-color: aquamarine;
+        padding: 0.7em;
+      }
+
+      /* 메뉴 */
+      .menu-container {
+        width: 100%;
+        background-color: bisque;
+
+        display: flex;
+      }
+
+      .menu-item {
+        background-color: rgb(197, 126, 39);
+        color: white;
+        padding: 0.5em;
+        text-align: center;
+
+        width: calc(100% / 7);
+        transition: 0.3s;
+      }
+
+      .menu-item:hover {
+        width: calc((100% / 7) * 2);
+        background-color: red;
+      }
+
+      /* 메인 */
+      .card-container {
+        background-color: aliceblue;
+
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+      }
+
+      .card-item {
+        background-color: blanchedalmond;
+      }
+
+      .card-img {
+        background-image: url("https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 60%;
+      }
+
+      .card-content {
+        background-color: aqua;
+        padding: 1em;
+      }
+
+      /* 사이드 바 */
+      .sidebar {
+        padding: 1em;
+        color: white;
+        width: 100%;
+      }
+
+      /* 왼쪽 사이드 바 */
+      .sidebar-left {
+        background-color: cornflowerblue;
+      }
+
+      /* 오른쪽 사이드 바 */
+      .sidebar-right {
+        background-color: rgb(25, 80, 182);
+      }
+
+      /* 푸터 */
+      .footer {
+        background-color: rgb(7, 26, 16);
+        color: white;
+        padding: 1em;
+        text-align: center;
+
+        width: 100%;
+      }
+
+      @media screen and (min-width: 768px) {
+        .sidebar {
+          width: 15%;
+
+          max-width: 200px;
+        }
+
+        .sidebar-left {
+          order: 1;
+        }
+
+        .sidebar-right {
+          order: 3;
+        }
+
+        .card-container {
+          flex-direction: row;
+          flex-wrap: wrap;
+          flex: 1;
+          width: 70%;
+
+          order: 2;
+        }
+
+        .card-item {
+          width: calc((100% - 1em) / 2);
+
+          display: flex;
+          flex-direction: column;
+        }
+
+        .card-content {
+          flex: 1 1 auto;
+        }
+
+        .footer {
+          width: 100%;
+
+          order: 4;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        .card-container {
+          gap: 1em;
+        }
+
+        .card-item {
+          width: calc((100% - 2em) / 3);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- 헤더 -->
+      <div class="header-container">
+        <div class="header-search">검색</div>
+        <div class="header-menu-container">
+          <div class="header-menu">카메라</div>
+          <div class="header-menu">문서</div>
+          <div class="header-menu">사진</div>
+          <div class="header-menu">정보</div>
+        </div>
+      </div>
+      <!-- 메뉴 -->
+      <div class="menu-container">
+        <div class="menu-item">메일</div>
+        <div class="menu-item">블로그</div>
+        <div class="menu-item">카페</div>
+        <div class="menu-item">태그</div>
+        <div class="menu-item">쇼핑</div>
+        <div class="menu-item">뉴스</div>
+        <div class="menu-item">지도</div>
+      </div>
+      <!-- 메인 -->
+      <div class="card-container">
+        <div class="card-item">
+          <div class="card-img"></div>
+          <div class="card-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            ab debitis quae repudiandae officiis obcaecati fugit. Aspernatur,
+            non! Sequi est vel veritatis quisquam. Voluptatibus voluptas fuga
+            quis
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-img"></div>
+          <div class="card-content">Lorem ipsum dolo</div>
+        </div>
+        <div class="card-item">
+          <div class="card-img"></div>
+          <div class="card-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            ab debitis quae repudiandae officiis obcaecati fugit. Aspernatur,
+            non! Sequi est vel veritatis quisquam. Voluptatibus voluptas fuga
+            quis dolorum voluptatem hic!
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-img"></div>
+          <div class="card-content">Lorem i</div>
+        </div>
+        <div class="card-item">
+          <div class="card-img"></div>
+          <div class="card-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            ab debitis quae repudiandae officiis obcaecati fugit. Aspernatur,
+            non! Sequi est vel veritatis quisquam. Voluptatibus voluptas fuga
+            quis dolorum voluptatem hic!
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-img"></div>
+          <div class="card-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            ab debitis quae repudiandae officiis obcaecati fugit. Aspernatur,
+            non! Sequi est vel veritatis quisquam. Voluptatibus voluptas fuga
+            quis dolorum voluptatem hic!
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-img"></div>
+          <div class="card-content">Lorem</div>
+        </div>
+        <div class="card-item">
+          <div class="card-img"></div>
+          <div class="card-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            ab debitis quae
+          </div>
+        </div>
+        <div class="card-item">
+          <div class="card-img"></div>
+          <div class="card-content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+            ab debitis q
+          </div>
+        </div>
+      </div>
+      <!-- 왼쪽 사이드바 -->
+      <div class="sidebar sidebar-left">
+        <div class="div">왼쪽 사이드 바</div>
+        <div class="div">왼쪽 사이드 바</div>
+        <div class="div">왼쪽 사이드 바</div>
+        <div class="div">왼쪽 사이드 바</div>
+        <div class="div">왼쪽 사이드 바</div>
+      </div>
+      <!-- 오른쪽 사이드바 -->
+      <div class="sidebar sidebar-right">
+        <div class="div">오른쪽 사이드 바</div>
+        <div class="div">오른쪽 사이드 바</div>
+        <div class="div">오른쪽 사이드 바</div>
+        <div class="div">오른쪽 사이드 바</div>
+        <div class="div">오른쪽 사이드 바</div>
+      </div>
+      <!-- 푸터 -->
+      <div class="footer">푸터</div>
+    </div>
+  </body>
+</html>
