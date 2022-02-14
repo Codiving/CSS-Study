@@ -13,7 +13,7 @@ CSS `flex, grid`를 제대로 공부하고 싶어 프로젝트를 생성하였�
 - flex에서 사용한 이미지 출처 (unsplash)  
   [이미지 주소](https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60)
 
-### `Flex`
+### Flex
 
 - Header 컴포넌트
 
@@ -23,9 +23,9 @@ CSS `flex, grid`를 제대로 공부하고 싶어 프로젝트를 생성하였�
 
 - 전체 Layout
 
-### `Grid`
+### Grid
 
-### `Transfrom Transition`
+### Transfrom Transition
 
 **`Transfrom`**  
 특정 요소에 **회전**, **크기 조절**, **기울이기**, **이동 효과**를 설정할 수 있음.  
@@ -49,15 +49,15 @@ GPU를 사용하여 **성능이 좋다**.
 
 - Q. 1초 동안 중간과정을 실행시켜라
 
-```javascript
+```css
 .item {
-  transition: 1s
+  transition: 1s;
 }
 ```
 
 - Q. 기존 transition은 가속도가 붙는다. 둥속도로 변경해보자.
 
-```javascript
+```css
 .item {
   transition: 1s linear;
 }
@@ -65,8 +65,99 @@ GPU를 사용하여 **성능이 좋다**.
 
 - Q. 1초 후 animation, 1초 동안 실행시키고 싶다.
 
-```javascript
+```css
 .item {
   transition: 1s 1s;
+}
+```
+
+### Animation
+
+**`Animation`**  
+animation은 style을 전환할 때 사용할 수 있습니다.
+출처 : [MDN Animation](https://developer.mozilla.org/ko/docs/Web/CSS/animation)
+
+- Q. 1초 동안 x, y축으로 100px씩 움직이시오.
+
+```css
+@keyframes temp-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(100px, 100px);
+  }
+}
+
+.item {
+  animation: temp-animation 1s;
+}
+```
+
+- Q. 위 동작을 3번 반복하시오.
+
+```css
+.item {
+  animation: temp-animation 1s 3;
+}
+```
+
+- Q. 위 동작을 무한 반복하시오.
+
+```css
+.item {
+  animation: temp-animation 1s infinite;
+}
+```
+
+- Q.  
+  시작 지점 : -100px, -100px  
+  중간 지점 : 100px, -100px  
+  끝 지점 : 100px, 100px을 1초동안 무한반복 하시오.
+
+```css
+@keyframes temp-animation {
+  0% {
+    transform: translate(-100px, -100px);
+  }
+
+  50% {
+    transform: translate(100px, -100px);
+  }
+
+  100% {
+    transform: translate(100px, 100px);
+  }
+}
+
+.item {
+  animation: temp-animation 1s infinite;
+}
+```
+
+- Q. 위 동작을 반대로 실행하시오.
+
+```css
+.item {
+  animation: temp-animation 1s infinite reverse;
+}
+```
+
+- Q.  
+   위 정방향 동작을 왔다 갔다 하시오.  
+   0% -> 50% -> 100% -> 50% -> 0% 반복
+
+```css
+.item {
+  animation: temp-animation 1s infinite alternate;
+}
+```
+
+- Q.위 정방향 동작을 진행하는데 종료 시 마지막에 위치하시오.
+
+```css
+.item {
+  animation: temp-animation 1s forwards;
 }
 ```
