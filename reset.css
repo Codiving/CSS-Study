@@ -127,6 +127,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+html {
+  word-wrap: break-word;
+}
 * {
   box-sizing: border-box;
 }
